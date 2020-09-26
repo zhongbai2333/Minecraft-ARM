@@ -70,7 +70,7 @@ tar -zxf lwjgl3arm*.tar.gz -C ~/lwjgl3arm
 echo Setup 10/10
 sudo chmod +x runMC1_14_4_OptifineF3.sh  
 
-echo "接下来的操作请看我的GitHub：,run on 5s later."
+echo "接下来的操作请看我的GitHub：https://github.com/zhongbai2333/Minecraft-ARM ,run on 5s later."
 sleep 5s
 ./opt/jdk/jdk1.8.0_261/bin/java -jar launcher.jar
 
