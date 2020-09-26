@@ -1,4 +1,7 @@
 #!/bin/sh -e
+
+$a=`getconf LONG_BIT`
+
 echo begin setupMC1_14_4
 
 DIR=~/Minecraft
@@ -12,20 +15,24 @@ cd "$DIR"
 pwd
 
 echo Setup 2/10
-if [ ! -d ~/lwjgl3arm64 ]; then
-    mkdir ~/lwjgl3arm64
+if [ ! -d ~/lwjgl3arm ]; then
+    mkdir ~/lwjgl3arm
 fi
 
 # download minecraft
 echo Setup 3/10
-if [ ! -f Minecraft.jar ]; then
-    wget https://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar
+if [ ! -f launcher.jar ]; then
+    wget http://move.rupy.se/file/launcher.jar
 fi
 
 # download java  
 echo Setup 4/10
-if [ ! -f jdk-8u221-linux-arm64-vfp-hflt.tar.gz ]; then
-    wget https://www.dropbox.com/s/j7f4a31v1drf5fe/jdk-8u221-linux-arm64-vfp-hflt.tar.gz
+if [ ! -f jdk-*.tar.gz ]; then
+    if[$a = 64]; then
+        wget 
+    else
+        wget 
+    fi
 fi
 
 # download optifine
