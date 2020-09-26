@@ -29,25 +29,32 @@ fi
 echo Setup 4/10
 if [ ! -f jdk-*.tar.gz ]; then
     if[$a = 64]; then
-        
+        wget https://dev05.baidupan.com/092618bb/2020/09/26/7b428414259b3887dbdeca139e01e41b.gz?st=iSFZE14_lETJJBMlzbVrfQ&e=1601116872&b=BT0LbwBrVX0Dbl98BWcBMwRgWyoNYARrVWgKcgJ9X3BUZwl7Uz4AM1MyUyhWcFAyCSxaK1c_bAWECPQF4XXRTJQU2C3kALlU3Ayw_c&fi=30175060&pid=123-152-192-245&up=
     else
-        
+        wget https://dev95.baidupan.com/092618bb/2020/09/26/bc44f0878a86f4cc38694604f25738c3.gz?st=JQl4GNbiiYKbYZGC1wGWLw&e=1601116728&b=UmoJbVM4UXlVOFV2AWNVZ1UxWShTPlA_aAD1aIgF_bUX4BMgx_bBWhTZVcwA3gKLAdlASQMfQ1kB2cCPVghBy5RJ1JhCXtTfVEzVXo_c&fi=30175069&pid=123-152-192-245&up=
     fi
 fi
 
 # download optifine
 echo Setup 5/10
 if [ ! -f OptiFine_1.14.4_HD_U_F5.jar ]; then
-    wget https://optifine.net/downloadx?f=OptiFine_1.14.4_HD_U_F5.jar&x=71d50bb647c2f81a98e4497c1af756e9
+    wget https://optifine.net/adloadx?f=OptiFine_1.14.4_HD_U_F5.jar
+    sed -n '/downloadx?f=OptiFine_1.14.4_HD_U_F5.jar/,/ /p' 'adloadx?f=OptiFine_1.14.4_HD_U_F5.jar' > 1.log
+    cut -d '&' -f 2 1.log | cut -d "'" -f 1 > 2.log
+    optifine=`sed -n '1p' 2.log`
+    rm 'adloadx?f=OptiFine_1.14.4_HD_U_F5.jar'
+    rm 1.log
+    rm 2.log
+    wget "https://optifine.net/downloadx?f=OptiFine_1.14.4_HD_U_F5.jar&$optifine" -O ./OptiFine_1.14.4_HD_U_F5.jar
 fi
 
 # download lwjgl3arm64
 echo Setup 6/10
 if [ ! -f lwjgl3*.tar.gz ]; then
     if[$a = 64]; then
-        wget https://vip.d0.baidupan.com/file/?UjRSbAg5Dz4CC1FpBjNUOAY5UGgHNAJ3Am8BYFNjUWMAYVN2CTkBY1IwVi4CIgBgBi4BKgU9VCwFJFExATQEaVI3UloIPA8/AmlRNAZiVGQGa1BgB2ECMgI2ASFTaVEjAD1TNwliAWxSN1Y5AmQANQZ6AXQFKlRrBTBRZwFvBDVSfVI1CGwPdAJmUTEGfVQ3BjpQMQc6AjMCNQE1UzpRYABlU2IJYQFgUjFWZQI0AGIGawFmBW5UbgVjUTEBbARjUmpSNQhkD28CYlExBjdUewY7UC8HfgJ1AnYBYlN9UTkAZFM5CWUBY1IxVjkCbgAzBmgBIgUuVD8Fb1EyATsEOFJjUjMIZQ9qAmRRPgZqVGIGaFBjB3YCJgJwAXdTMlFhAC5TIgkyATlSc1Y9AmYAJwYpAXQFLVRrBTNRYQFtBDRSYlI8CGIPbAJmUTYGdFQgBjVQJQdlAjECNwE0UyFRYQA1UzYJegFkUj1WMgJ4ADMGaAEx
+        wget https://dev34.baidupan.com/092618bb/2020/09/26/bfdb30250ef555ebc7b48af1f801466e.gz?st=8QXuJVJBE-Qstw_Ub9EFzw&e=1601116662&b=VGoKfQhiUjBUbV86VWRSJFZuWzEBNAsjAiUIZAB1BSkHMl4k&fi=30175923&pid=123-152-192-245&up=
     else
-        wget https://vip.d0.baidupan.com/file/?UjQCPAw9Dz4BCFBoAzZcMAQ7BT0DMFEkCmdWN1VlVWcBLwUmCzcBJ1EpCzpQflF2VGgHawAzAGcDW1Q7VGwBPVJhAmUMYA9sAWJQPwNlXGQEeAVmAy9Rbgo+VmJVPlVlATAFYAthAXNRdwstUDlRYlQ+BzAAbwAtAzRUa1QnATJSZAJ6DDAPbQExUDUDYVxrBGgFZgM9UWMKaFZjVT9VYwEyBWoLbwFsUTcLalBmUTFUPAcwADsAMgM2VDFUaQFjUmECZgx/DzwBLVAgAyJcLgQ7BXIDNVE3CjBWYVU/VWEBOAVqC2QBYVEhCylQbVE9VGsHZABiADMDMlRiVDkBMFJrAm0MZg9iAWRQKANxXCgELgU9A21RfQorVjZVZVUjATwFYgtwASBRdwsqUDlRYVQ4BzIAbgAyAz1UZVQ/ATJSZwJzDCQPMgEnUDsDZlxvBG0FLgNtUWYKP1Z+VThVbQEzBXwLZAFhUTI=
+        wget https://dev95.baidupan.com/092618bb/2020/09/26/a6f3666fa0e367389907ba22d02cac33.gz?st=dgUe9zclEy3Yre5bT39i0g&e=1601116507&b=AjxbLAljBGYFPF47BngOfgczDCIDLAprUXg_c&fi=30175929&pid=123-152-192-245&up=
     fi
 fi
 
@@ -68,6 +75,7 @@ tar -zxf lwjgl3arm*.tar.gz -C ~/lwjgl3arm
 
 # get run script
 echo Setup 10/10
+
 sudo chmod +x runMC1_14_4_OptifineF3.sh  
 
 echo "接下来的操作请看我的GitHub：https://github.com/zhongbai2333/Minecraft-ARM ,run on 5s later."
