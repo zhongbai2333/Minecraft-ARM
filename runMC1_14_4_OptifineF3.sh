@@ -10,9 +10,9 @@
  
 # !!! YOU MUST PERSONALIZE ALL OF THIS INFO !!!
 # your personal login/password.  chmod 700 to keep this private
-MINECRAFT_LOGIN=3422857988@qq.com
-MINECRAFT_USERNAME=zhongbai233
-MINECRAFT_PASSWORD=tujiaxuan5432
+MINECRAFT_LOGIN=xxx@xxx.xxx
+MINECRAFT_USERNAME=xxx
+MINECRAFT_PASSWORD=xxx
 
 # where did you store the native liblwjgl.so and libopenal.so?
 MINECRAFT_NATIVE_PATH=/home/steve/lwjgl3arm64/
